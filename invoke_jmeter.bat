@@ -4,9 +4,8 @@ cd /d %~dp0
 dir
 if exist "D:\Users\kang\git\github\jmeter\apache-jmeter-5.3\" rd /q /s "D:\Users\kang\git\github\jmeter\apache-jmeter-5.3"
 Call :UnZipFile "D:\Users\kang\git\github\jmeter" "D:\Users\kang\git\github\jmeter\apache-jmeter-5.3.zip"
-dir
 cd apache-jmeter-5.3\bin
-jmeter.bat -Jjmeter.save.saveservice.output_format=xml -n -t BlazeDemo_SearchFlight.jmx -l xxxx.jtl
+jmeter -Jjmeter.save.saveservice.output_format=xml -n -t BlazeDemo_SearchFlight.jmx -l xxxx.jtl
 exit /b
 
 :UnZipFile <ExtractTo> <newzipfile>
