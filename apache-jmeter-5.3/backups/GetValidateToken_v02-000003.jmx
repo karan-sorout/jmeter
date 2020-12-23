@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </Arguments>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="oauth-token" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="grant_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">grant_type</stringProp>
+                </elementProp>
+                <elementProp name="response_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">token</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">response_type</stringProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">vorono6301@mojzur.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">WreYat4uqwe</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">ikea-pay-apply openid</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">test-1-ropc</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="client_secret" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">sQqa_hlsVEq4iA-ht5N4sCpGFgBxG7E1HDpB7Fq44ROBLBH5-jSx5gRappcgLgMU</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_secret</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">sit-org-curity.sec.bank.ikano</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/oauth/v2/oauth-token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="access_token" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">access_token</stringProp>
+              <stringProp name="RegexExtractor.regex">access_token&quot;:&quot;(.*?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NF access_token</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <eu.luminis.jmeter.wssampler.OpenWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.OpenWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.OpenWebSocketSampler" testname="WebSocket Open Connection" enabled="false">
+            <boolProp name="TLS">true</boolProp>
+            <stringProp name="server">api-ws.eem.sit.bank.ikano</stringProp>
+            <stringProp name="port">443</stringProp>
+            <stringProp name="path">/origination-ws?action=saveApplication&amp;authtoken=${access_token}</stringProp>
+            <stringProp name="connectTimeout">20000</stringProp>
+            <stringProp name="readTimeout">6000</stringProp>
+          </eu.luminis.jmeter.wssampler.OpenWebSocketSampler>
+          <hashTree/>
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+            <boolProp name="LoopController.continue_forever">true</boolProp>
+            <stringProp name="LoopController.loops">2</stringProp>
+          </LoopController>
+          <hashTree>
+            <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+              <collectionProp name="UserParameters.names">
+                <stringProp name="688743644">counterPartyNum</stringProp>
+              </collectionProp>
+              <collectionProp name="UserParameters.thread_values">
+                <collectionProp name="2041307265">
+                  <stringProp name="569390036">IKPC02513246</stringProp>
+                </collectionProp>
+              </collectionProp>
+              <boolProp name="UserParameters.per_iteration">true</boolProp>
+            </UserParameters>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ImageUpload-Front" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;imageDetail&quot;:{&quot;counterPartyNum&quot;:&quot;${counterPartyNum}&quot;,&quot;image&quot;:&quot;${images}&quot;,&quot;tag&quot;:&quot;FRONT&quot;}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">api.eem.sit.bank.ikano</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/api/v1/origination/loan-app-ui-service/images</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">C:/apache-jmeter-5.3/bin/images.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.thread</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames"></stringProp>
+              </CSVDataSet>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ImageUpload-Back" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;imageDetail&quot;:{&quot;counterPartyNum&quot;:&quot;${counterPartyNum}&quot;,&quot;image&quot;:&quot;${images}&quot;,&quot;tag&quot;:&quot;BACK&quot;}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">api.eem.sit.bank.ikano</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/api/v1/origination/loan-app-ui-service/images</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">C:/apache-jmeter-5.3/bin/images.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.thread</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames"></stringProp>
+              </CSVDataSet>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ImageUpload-Selfie" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;imageDetail&quot;:{&quot;counterPartyNum&quot;:&quot;${counterPartyNum}&quot;,&quot;image&quot;:&quot;${images}&quot;,&quot;tag&quot;:&quot;SELFIE&quot;}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">api.eem.sit.bank.ikano</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/api/v1/origination/loan-app-ui-service/images</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">C:/apache-jmeter-5.3/bin/images.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.thread</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames"></stringProp>
+              </CSVDataSet>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ImageUpload-ProofOfLiving" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;imageDetail&quot;:{&quot;counterPartyNum&quot;:&quot;${counterPartyNum}&quot;,&quot;image&quot;:&quot;${images}&quot;,&quot;tag&quot;:&quot;PROOFOFLIVING&quot;}}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">api.eem.sit.bank.ikano</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/api/v1/origination/loan-app-ui-service/images</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">C:/apache-jmeter-5.3/bin/images.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.thread</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames"></stringProp>
+              </CSVDataSet>
+              <hashTree/>
+            </hashTree>
+            <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="SaveApplication" enabled="false">
+              <boolProp name="createNewConnection">true</boolProp>
+              <boolProp name="TLS">true</boolProp>
+              <stringProp name="server">api-ws.eem.sit.bank.ikano</stringProp>
+              <stringProp name="port">443</stringProp>
+              <stringProp name="path">/origination-ws?action=saveApplication&amp;authtoken=${access_token}</stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <boolProp name="binaryPayload">false</boolProp>
+              <stringProp name="requestData">{
+  &quot;loanApplication&quot;: {
+    &quot;product&quot;: {
+      &quot;productCode&quot;: &quot;IPIFC&quot;,
+      &quot;maxLimit&quot;: 15000.0,
+      &quot;minLimit&quot;: 99.0
+    },
+    &quot;application&quot;: {
+      &quot;monthlyPayment&quot;: 1200.0,
+      &quot;finalPayment&quot;: 1700.0,
+      &quot;repaymentPeriod&quot;: 12,
+      &quot;rateOfInterest&quot;: 0.0,
+      &quot;amountRepayableInclOfInterest&quot;: 5000.0,
+      &quot;limitApplied&quot;: 7500.0,
+      &quot;applicationChannel&quot;: &quot;APP&quot;
+    },
+    &quot;applicants&quot;: [
+      {
+        &quot;primaryApplicant&quot;: true,
+        &quot;applicantId&quot;: 4321,
+        &quot;applicantData&quot;: {
+          &quot;locations&quot;: [
+            {
+              &quot;locationId&quot;: 1,
+              &quot;location&quot;: {
+                &quot;flat&quot;: &quot;${house_name}&quot;,
+                &quot;street&quot;: &quot;${street}&quot;,
+                &quot;residentialStatus&quot;: &quot;O&quot;,
+                &quot;houseNumber&quot;: ${houser_nr},
+                &quot;county&quot;: &quot;${county}&quot;,
+                &quot;postcode&quot;: &quot;${post_code}&quot;,
+                &quot;type&quot;: &quot;C&quot;,
+                &quot;timeAt&quot;: {
+                  &quot;months&quot;: 1,
+                  &quot;years&quot;: 2
+                },
+                &quot;postTown&quot;: &quot;${town}&quot;
+              }
+            }
+          ],
+          &quot;bankDetails&quot;: {
+            &quot;paymentDay&quot;: 2,
+            &quot;bankSortCode&quot;: &quot;${sort_code}&quot;,
+            &quot;bankAccountNumber&quot;: &quot;${account_nr}&quot;,
+            &quot;paymentAmount&quot;: 1345.1
+          },
+          &quot;personalDetails&quot;: {
+            &quot;emailAddress&quot;: &quot;testingiorighcl@gmail.com&quot;,
+            &quot;dependants&quot;: 1,
+            &quot;mobileNumber&quot;: &quot;&quot;,
+            &quot;maritalStatus&quot;: &quot;M&quot;
+          },
+          &quot;proofOfIdentity&quot;: {
+            &quot;identityMethod&quot;: &quot;PHOTO ID VALIDATION&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;documentType&quot;: &quot;PASSPORT&quot;
+          },
+          &quot;employmentDetails&quot;: {
+            &quot;situationLikelyToChange&quot;: false,
+            &quot;grossAnnualIncome&quot;: &quot;450071&quot;,
+            &quot;employmentStatus&quot;: &quot;E&quot;
+          }
+        },
+        &quot;applicant&quot;: {
+          &quot;firstName&quot;: &quot;${first_name}&quot;,
+          &quot;lastName&quot;: &quot;${last_name}&quot;,
+          &quot;dateOfBirth&quot;: &quot;${dob}&quot;,
+          &quot;title&quot;: &quot;Mr&quot;
+        }
+      }
+    ],
+    &quot;consent&quot;: {
+      &quot;marketingConsent&quot;: true
+    },
+    &quot;device&quot;: {
+      &quot;blackbox&quot;: &quot;&quot;,
+      &quot;ipAddress&quot;: &quot;127.0.0.1&quot;
+    },
+    &quot;returnUrl&quot;: &quot;https://en.wikipedia.org/wiki/Ikano&quot;
+  },
+  &quot;globalTransactions&quot;: {
+    &quot;createdAt&quot;: &quot;${__time(yyyy-mm-dd&apos;T&apos;hh:mm:ss.SSS&apos;Z&apos;,)}&quot;,
+    &quot;id&quot;: &quot;${uuid}&quot;,
+    &quot;websocketId&quot;: &quot;&quot;,
+    &quot;sourceApplication&quot;: {
+      &quot;host&quot;: &quot;ikano&quot;,
+      &quot;name&quot;: &quot;ipay-loan&quot;
+    }
+  },
+  &quot;action&quot;: &quot;saveApplication&quot;,
+  &quot;user&quot;: {
+    &quot;applicationVersion&quot;: &quot;1.0.1&quot;,
+    &quot;counterPartyNum&quot;: &quot;${counterPartyNum}&quot;,
+    &quot;mobileAppId&quot;: &quot;com.ikano.pay.mobile&quot;,
+    &quot;serviceProvider&quot;: &quot;IKANO&quot;,
+    &quot;deviceModel&quot;: &quot;SM-9K652&quot;,
+    &quot;accessToken&quot;: &quot;&quot;,
+    &quot;accountNumber&quot;: &quot;&quot;,
+    &quot;operation&quot;: &quot;Test&quot;,
+    &quot;platform&quot;: &quot;WEB&quot;,
+    &quot;softwareVersion&quot;: &quot;1.23V&quot;
+  }
+}</stringProp>
+              <stringProp name="readTimeout">120000</stringProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+            <hashTree>
+              <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+                <stringProp name="delimiter">,</stringProp>
+                <stringProp name="fileEncoding"></stringProp>
+                <stringProp name="filename">C:/apache-Jmeter_workspace/csvs/_input/final_e2e_test_data.csv</stringProp>
+                <boolProp name="ignoreFirstLine">false</boolProp>
+                <boolProp name="quotedData">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
+                <stringProp name="shareMode">shareMode.thread</stringProp>
+                <boolProp name="stopThread">false</boolProp>
+                <stringProp name="variableNames"></stringProp>
+              </CSVDataSet>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="642376892">systemCode</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Response_saveApp" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">response1</stringProp>
+                <stringProp name="RegexExtractor.regex">{(.*?)}</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NF Response</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Decision_saveApp" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">decision1</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;decision&quot;:&quot;(.*?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NF Decision</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex - app_id" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">app_id</stringProp>
+                <stringProp name="RegexExtractor.regex">applicationId&quot;:&quot;(.*?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NF app_id</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+                <collectionProp name="UserParameters.names">
+                  <stringProp name="3601339">uuid</stringProp>
+                </collectionProp>
+                <collectionProp name="UserParameters.thread_values">
+                  <collectionProp name="681405977">
+                    <stringProp name="118040362">${__UUID()}</stringProp>
+                  </collectionProp>
+                </collectionProp>
+                <boolProp name="UserParameters.per_iteration">true</boolProp>
+              </UserParameters>
+              <hashTree/>
+            </hashTree>
+            <eu.luminis.jmeter.wssampler.CloseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.CloseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.CloseWebSocketSampler" testname="WebSocket Close-SaveApplication" enabled="false">
+              <stringProp name="statusCode">1000</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+            </eu.luminis.jmeter.wssampler.CloseWebSocketSampler>
+            <hashTree/>
+            <eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler" testname="SaveConsent" enabled="false">
+              <boolProp name="createNewConnection">true</boolProp>
+              <boolProp name="TLS">true</boolProp>
+              <stringProp name="server">api-ws.eem.sit.bank.ikano</stringProp>
+              <stringProp name="port">443</stringProp>
+              <stringProp name="path">/origination-ws?action=saveConsent&amp;authtoken=${access_token}</stringProp>
+              <stringProp name="connectTimeout">20000</stringProp>
+              <boolProp name="binaryPayload">false</boolProp>
+              <stringProp name="requestData">{
+   &quot;globalTransactions&quot;:{
+      &quot;createdAt&quot;:&quot;${__time(yyyy-mm-dd&apos;T&apos;hh:mm:ss.SSS&apos;Z&apos;,)}&quot;,
+      &quot;id&quot;:&quot;${uuid}&quot;,
+      &quot;websocketId&quot;:&quot;&quot;,
+      &quot;sourceApplication&quot;:{
+         &quot;host&quot;:&quot;host&quot;,
+         &quot;name&quot;:&quot;name&quot;
+      }
+   },
+   &quot;action&quot;:&quot;saveConsent&quot;,
+   &quot;fullSearchConsent&quot;:true,
+   &quot;applicationId&quot;:&quot;${app_id}&quot;,
+   &quot;device&quot;:{
+      &quot;blackbox&quot;:&quot;&quot;,
+      &quot;ipAddress&quot;:&quot;127.0.0.1&quot;
+   },
+   &quot;user&quot;:{
+      &quot;applicationVersion&quot;:&quot;1.1.1&quot;,
+      &quot;counterPartyNum&quot;:&quot;${counterPartyNum}&quot;,
+      &quot;mobileAppId&quot;:&quot;com.app&quot;,
+      &quot;serviceProvider&quot;:&quot;Lyca&quot;,
+      &quot;deviceModel&quot;:&quot;OP-98HA1&quot;,
+      &quot;accessToken&quot;:&quot;&quot;,
+      &quot;accountNumber&quot;:&quot;&quot;,
+      &quot;operation&quot;:&quot;IKANO&quot;,
+      &quot;platform&quot;:&quot;WEB&quot;,
+      &quot;softwareVersion&quot;:&quot;1.2.1&quot;
+   }
+}</stringProp>
+              <stringProp name="readTimeout">120000</stringProp>
+              <boolProp name="loadDataFromFile">false</boolProp>
+              <stringProp name="dataFile"></stringProp>
+            </eu.luminis.jmeter.wssampler.RequestResponseWebSocketSampler>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="3059181">code</stringProp>
+                  <stringProp name="2105869">Code</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">48</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Response_saveConsent" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">response2</stringProp>
+                <stringProp name="RegexExtractor.regex">{(.*?)}</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NF Response2</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Decision_saveConsent" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">decision2</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;decision&quot;:&quot;(.*?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NF Decision2</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="script">// get variables from regular expression extractor 
+lastname = vars.get(&quot;last_name&quot;);
+Name=vars.get(&quot;first_name&quot;);
+DOB=vars.get(&quot;dob&quot;);
+Decision1 = vars.get(&quot;decision1&quot;);
+Response1 = vars.get(&quot;response1&quot;);
+Decision2 = vars.get(&quot;decision2&quot;);
+Response2 = vars.get(&quot;response2&quot;);
+ // pass true if want to append to existing file  
+ // if want to overwrite, then don&apos;t pass the second argument
+
+ FileWriter fstream = new FileWriter(&quot;Testdata_Result_loop.csv&quot;, true);
+  BufferedWriter out = new BufferedWriter(fstream);
+  out.write(System.getProperty(&quot;line.separator&quot;));
+ out.write(Name + &quot;,&quot; + lastname + &quot;,&quot; + DOB + &quot;, SaveApp Decision=&quot; + Decision1 + &quot;, SaveApp Response=&quot; + Response1 + &quot;CONSENT RESPONSE&gt;&gt;&gt; Consent Decision=&quot; + Decision2 + &quot;, Consent Response=&quot; + Response2);
+ 
+ out.close();
+ fstream.close();</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <eu.luminis.jmeter.wssampler.CloseWebSocketSampler guiclass="eu.luminis.jmeter.wssampler.CloseWebSocketSamplerGui" testclass="eu.luminis.jmeter.wssampler.CloseWebSocketSampler" testname="WebSocket Close-SaveConsent" enabled="false">
+              <stringProp name="statusCode">1000</stringProp>
+              <stringProp name="readTimeout">6000</stringProp>
+            </eu.luminis.jmeter.wssampler.CloseWebSocketSampler>
+            <hashTree/>
+          </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">2000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">final_e2e_test_data_result.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
